@@ -139,6 +139,10 @@ fi
 adb shell settings put secure ui_night_mode 2
 verify_setting "secure" "ui_night_mode" "2" "System: Dark Mode Enabled"
 
+# Set system-wide font scale to small
+adb shell settings put system font_scale 0.85
+verify_setting "system" "font_scale" "0.85" "System: Font Size Set to Small"
+
 # Setup Signal repo
 echo "Opening Signal-FOSS F-Droid repo on handset..."
 if ! adb shell am start -a android.intent.action.VIEW -d fdroidrepos://fdroid.twinhelix.com/fdroid/repo?fingerprint=7B03B0232209B21B10A30A63897D3C6BCA4F58FE29BC3477E8E3D8CF8E304028 >/dev/null 2>&1; then
@@ -153,7 +157,6 @@ if [ ${#failed_steps[@]} -eq 0 ]; then
 	echo
 	echo "Post-install steps are required:"
 	echo "- Click the \"Add Repository\" button on the handset for Signal-FOSS"
-	echo "- Set font size to small from System Settings -> Display -> Display size and text -> Font size by moving the slider to the left"
 	echo "- Restart the handset for Dark Mode to take effect"
 else
 	echo "SCRIPT FINISHED WITH ${#failed_steps[@]} ERROR(S)"
