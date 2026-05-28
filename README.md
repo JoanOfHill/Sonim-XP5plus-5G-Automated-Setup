@@ -6,6 +6,7 @@ Automates app installation and setup for the Sonim XP5plus 5G
 * Installs and automatically configures Traditional T9 keyboard
 * Installs F-Droid and sets app installation permissions
 * Enables system-wide dark mode
+* Sets system-wide font scaling to small
 * Installs Signal-FOSS and guides the user through F-Droid repo installation
 * Installs the Sonim specific build for Zello
 * Installs Aurora Store for anonymous Play Store app downloads
